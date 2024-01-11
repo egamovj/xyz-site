@@ -10,6 +10,7 @@ const Pricing = () => {
       yearlyPrice: 199,
       description:
         "A common form of Lorem ipsum reads: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      green: "src/assets/images/green.png",
     },
     {
       name: "Advance",
@@ -17,6 +18,7 @@ const Pricing = () => {
       yearlyPrice: 399,
       description:
         "A common form of Lorem ipsum reads: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      green: "src/assets/images/green.png",
     },
     {
       name: "Premium",
@@ -24,6 +26,7 @@ const Pricing = () => {
       yearlyPrice: 599,
       description:
         "A common form of Lorem ipsum reads: Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      green: "src/assets/images/green.png",
     },
   ];
 
@@ -60,6 +63,50 @@ const Pricing = () => {
             onChange={() => setIsYearly(!isYearly)}
           />
         </div>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 md:w-11/12 mx-auto">
+        {packages.map((pkg, index) => (
+          <div
+            key={index}
+            className="border py-10 md:px-6 px-4 rounded-lg shadow-3xl"
+          >
+            <h3 className="text-3xl font-bold text-center text-primary">
+              {pkg.name}
+            </h3>
+            <p className="text-tartiary text-center my-5">{pkg.description}</p>
+            <p className="mt-5 text-center text-secondary text-4xl font-bold">
+              {isYearly ? `$${pkg.yearlyPrice}` : `$${pkg.monthlyPrice}`}
+              <span className="text-base text-tartiary font-medium">
+                /{isYearly ? "year" : "month"}
+              </span>
+            </p>
+            <ul className="mt-4 space-y-2">
+              <li className="flex items-center gap-3">
+                <img src={pkg.green} alt="Green round" className="w-4 h-4" />
+                Videos of Lessons
+              </li>
+              <li className="flex items-center gap-3">
+                <img src={pkg.green} alt="Green round" className="w-4 h-4" />
+                Homework check
+              </li>
+              <li className="flex items-center gap-3">
+                <img src={pkg.green} alt="Green round" className="w-4 h-4" />
+                Additional practical task
+              </li>
+              <li className="flex items-center gap-3">
+                <img src={pkg.green} alt="Green round" className="w-4 h-4" />
+                Monthly conferences
+              </li>
+              <li className="flex items-center gap-3">
+                <img src={pkg.green} alt="Green round" className="w-4 h-4" />
+                Personal advice from teachers
+              </li>
+            </ul>
+            <div className="w-full mx-auto mt-8 flex items-center justify-center">
+              <button className="btnPrimary">Get started</button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
