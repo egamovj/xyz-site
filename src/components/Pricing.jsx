@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
@@ -64,7 +66,12 @@ const Pricing = () => {
           />
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 md:w-11/12 mx-auto">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.75 }}
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20 md:w-11/12 mx-auto">
         {packages.map((pkg, index) => (
           <div
             key={index}
@@ -107,7 +114,7 @@ const Pricing = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
