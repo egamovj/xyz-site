@@ -84,10 +84,11 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             smooth={true}
-            offset={-100}
+            offset={-80}
             key={link}
             to={path}
             className="block text-white hover:text-gray-300"
+            onClick={toggleMenu}
           >
             {link}
           </Link>
