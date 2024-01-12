@@ -89,7 +89,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="flex flex-col sm:flex-row gap-8 sm:items-center justify-between my-8">
-        <p>@ XYZ 20XX --- 20XX. All rights reserved.</p>
+        <p>@ XYZ 2024 --- 2024. All rights reserved.</p>
         <div className="flex items-center space-x-5">
           <img
             src={facebook}
